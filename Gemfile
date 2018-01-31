@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'haml-rails'
 gem 'devise'
 gem 'figaro'
+gem 'mysql2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
