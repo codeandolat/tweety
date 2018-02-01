@@ -1,6 +1,9 @@
 %h2.title.is-3 Ingresa
 %hr
 
+.has-text-centered.mb20
+  = render "devise/shared/socials"
+
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .field
     = f.label "Correo electrónico", class: "label"
