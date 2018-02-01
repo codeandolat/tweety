@@ -36,6 +36,7 @@ gem 'figaro'
 gem 'mysql2'
 gem 'rails-assets-bulma', source: 'https://rails-assets.org'
 gem 'omniauth-facebook'
+gem 'font-awesome-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
