@@ -3,12 +3,12 @@
 
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .field
-    = f.label :email, class: "label"
+    = f.label "Correo electrónico", class: "label"
     .control
       = f.email_field :email, autofocus: true, autocomplete: "email", class: "input"
 
   .field
-    = f.label :password, class: "label"
+    = f.label "Constraseña", class: "label"
     .control
       = f.password_field :password, autocomplete: "off", class: "input"
 
@@ -21,6 +21,7 @@
 
   .field.is-grouped.is-grouped-right
     %p.control
-      = f.submit "Log in", class: "button is-primary"
+      = f.submit "Ingresar", class: "button is-primary"
+
 .has-text-right.mt20
   = render "devise/shared/links"
