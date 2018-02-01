@@ -1,15 +1,25 @@
+%h2.title.is-3 Perfil
+%hr
+
 = form_tag "/sign_up_validation", method: :post do
-  %ul
+  %ul.form-errors
     - @user.errors.full_messages.each do |error|
-      %li= error
-  %div
-    %label{ for: "user_username" } Nombre de usuario
-    = text_field_tag "user[username]", @user.username
-  %div
-    %label{ for: "user_email" } Correo electronico
-    = email_field_tag "user[email]", @user.email, required: true
-  %div
-    %label{ for: "user_name" } Nombre
-    = text_field_tag "user[name]", @user.name
-  %div
-    = submit_tag "Completar registro"
+      %li.error= error
+
+  .field
+    %label{ for: "user_username", class: "label" } Nombre de usuario
+    .control
+      = text_field_tag "user[username]", @user.username, class: "input"
+
+  .field
+    %label{ for: "user_email", class: "label" } Correo electronico
+    .control
+      = email_field_tag "user[email]", @user.email, required: true, class: "input"
+
+  .field
+    %label{ for: "user_name", class: "label" } Nombre
+    .control
+      = text_field_tag "user[name]", @user.name, class: "input"
+
+  .actions.has-text-right
+    = submit_tag "Completar registro", class: "button is-primary"

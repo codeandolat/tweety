@@ -8,3 +8,11 @@ html, body {
 .title-header{
   font-family: 'Pacifico', cursive;
 }
+
+.form-errors{
+  padding-bottom: 20px;
+  .error{
+    border-left: 5px solid red;
+    padding: 5px;
+  }
+}

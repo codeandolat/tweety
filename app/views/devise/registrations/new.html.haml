@@ -14,7 +14,7 @@
     .control
       = f.password_field :password, autocomplete: "off", class: "input"
     - if @minimum_password_length
-      %em (#{@minimum_password_length} caracteres mínimo)
+      %em.help (#{@minimum_password_length} caracteres mínimo)
 
   .field
     = f.label "Confirma Constraseña", class: "label"
