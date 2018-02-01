@@ -5,3 +5,18 @@
 @for $i from 1 through 5{
   .mt#{$i*10} { margin-top: $i*10px; }
 }
+
+@for $i from 1 through 5{
+  .ml#{$i*10} { margin-left: $i*10px; }
+}
+
+@for $i from 1 through 5{
+  .mr#{$i*10} { margin-left: $i*10px; }
+}
+
+@for $i from 1 through 5{
+  .mv#{$i*10} {
+    margin-top: $i*10px;
+    margin-bottom: $i*10px;
+  }
+}
