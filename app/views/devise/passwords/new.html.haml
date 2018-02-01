@@ -9,9 +9,8 @@
     .control
       = f.email_field :email, autofocus: true, autocomplete: "email", class: "input"
 
-  .field.is-grouped.is-grouped-right
-    %p.control
-      = f.submit "Envíame las instrucciones", class: "button is-primary"
+  .actions.has-text-right
+    = f.submit "Envíame las instrucciones", class: "button is-primary"
 
 .has-text-right.mt20
   = render "devise/shared/links"

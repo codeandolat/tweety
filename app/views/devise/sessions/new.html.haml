@@ -19,9 +19,8 @@
         = f.check_box :remember_me
         %span Recuérdame
 
-  .field.is-grouped.is-grouped-right
-    %p.control
-      = f.submit "Ingresar", class: "button is-primary"
+  .actions.has-text-right
+    = f.submit "Ingresar", class: "button is-primary"
 
 .has-text-right.mt20
   = render "devise/shared/links"
