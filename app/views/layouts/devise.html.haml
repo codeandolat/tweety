@@ -16,7 +16,8 @@
         .columns
           .column.is-half.is-offset-one-quarter
             .has-text-centered.mb20
-              %h1.title.is-1.title-header Tweety
+              %h1.title.is-1.title-header
+                = link_to "Tweety", root_path, class: "has-text-black"
             .card
               .card-content
                 = yield
