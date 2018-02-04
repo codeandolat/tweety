@@ -20,3 +20,17 @@
     margin-bottom: $i*10px;
   }
 }
+
+@for $i from 1 through 5{
+  .pv#{$i*10} {
+    padding-top: $i*10px;
+    padding-bottom: $i*10px;
+  }
+}
+
+@for $i from 1 through 5{
+  .ph#{$i*10} {
+    padding-right: $i*10px;
+    padding-left: $i*10px;
+  }
+}
