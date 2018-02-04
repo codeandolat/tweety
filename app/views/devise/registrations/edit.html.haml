@@ -6,7 +6,10 @@
         %hr
 
         = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-          = devise_error_messages!
+
+          %ul.form-errors
+            - resource.errors.full_messages.each do |error|
+              %li.error= error
 
           .field
             = f.label "Correo electrónico", class: "label"
@@ -38,11 +41,6 @@
             = f.label "Confirma contraseña", class: "label"
             .control
               = f.password_field :password_confirmation, autocomplete: "off", class: "input"
-
-          .field
-            = f.label "Contraseña actual (la necesitas para confirmar cambios)", class: "label"
-            .control
-              = f.password_field :current_password, autocomplete: "off", class: "input"
 
           .actions.has-text-right
             = f.submit "Actualizar", class: "button is-primary"
