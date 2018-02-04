@@ -10,7 +10,15 @@
         %span
 
     .navbar-menu
+      .navbar-start
+        .navbar-item
+          = link_to "Publica", new_post_path
       .navbar-end
+        .navbar-item
+          - if current_user.username.empty?
+            = current_user.email
+          - else
+            = current_user.username
         .navbar-item
           = link_to "Perfil", edit_user_registration_path
         .navbar-item

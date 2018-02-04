@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
+  resources :posts
+  post "/sign_up_validation", to: "users/omniauth_callbacks#sign_up_validation"
+
   devise_for :users, controllers: {
     :omniauth_callbacks => "users/omniauth_callbacks",
     :registrations => "users/registrations"
   }
 
-  post "/sign_up_validation", to: "users/omniauth_callbacks#sign_up_validation"
-
   authenticated :user do
-    root 'home#index'
+    root 'posts#index'
   end
 
   unauthenticated :user do
