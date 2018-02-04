@@ -1,0 +1,17 @@
+%nav.navbar.mb20(role="navigation" aria-label="main navigation")
+  .container
+    .navbar-brand
+      %a.navbar-item(href="/")
+        %span.title.is-2.title-header.mv10 Tweety
+
+      %button.button.navbar-burger
+        %span
+        %span
+        %span
+
+    .navbar-menu
+      .navbar-end
+        .navbar-item
+          = link_to "Perfil", edit_user_registration_path
+        .navbar-item
+          = link_to "Salir", destroy_user_session_path, method: :delete
