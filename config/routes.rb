@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    :omniauth_callbacks => "users/omniauth_callbacks"
+    :omniauth_callbacks => "users/omniauth_callbacks",
+    :registrations => "users/registrations"
   }
 
   post "/sign_up_validation", to: "users/omniauth_callbacks#sign_up_validation"
@@ -10,6 +11,8 @@ Rails.application.routes.draw do
   end
 
   unauthenticated :user do
-    root 'home#unregistered'
+    devise_scope :user do
+      root to: "devise/sessions#new"
+    end
   end
 end
