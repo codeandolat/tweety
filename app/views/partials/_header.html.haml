@@ -16,7 +16,10 @@
       .navbar-end
         .navbar-item
           %figure.image.is-32x32.mr10
-            %img.round-image(src="#{current_user.image}")
+            - if current_user.image.nil?
+              %img.round-image(src="https://bulma.io/images/placeholders/32x32.png")
+            - else
+              %img.round-image(src="#{current_user.image}")
           - if current_user.username.empty?
             = current_user.email
           - else
