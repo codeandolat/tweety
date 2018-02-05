@@ -13,7 +13,7 @@
             .content
               %p
                 %strong
-                  = post.name
+                  = link_to post.name, post_path(post)
                 %small.has-text-weight-semibold
                   - if post.user.username.nil?
                     = post.user.email
