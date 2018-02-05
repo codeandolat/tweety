@@ -1,25 +1,32 @@
-%h1 Listing posts
-
-%table
-  %thead
-    %tr
-      %th User
-      %th Name
-      %th Content
-      %th
-      %th
-      %th
-
-  %tbody
+.columns.mt20
+  .column.is-half.is-offset-one-quarter
     - @posts.each do |post|
-      %tr
-        %td= post.user
-        %td= post.name
-        %td= post.content
-        %td= link_to 'Show', post
-        %td= link_to 'Edit', edit_post_path(post)
-        %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Post', new_post_path
+      .box
+        %article.media
+          .media-left
+            %figure.image.is-64x64
+              %img(src="#{post.user.image}" alt="Image")
+          .media-content
+            .content
+              %p
+                %strong
+                  = post.name
+                %small.has-text-weight-semibold
+                  - if post.user.username.nil?
+                    = post.user.email
+                  - else
+                    @#{post.user.username}
+                %small.is-italic.is-pulled-right= distance_of_time_in_words(post.created_at, Time.now, include_seconds: true)
+                %br
+                = post.content
+            %nav.level.is-mobile
+              .level-left
+                %a.level-item
+                  %span.icon.is-small
+                    = fa_icon "reply"
+                %a.level-item
+                  %span.icon.is-small
+                    = fa_icon "retweet"
+                %a.level-item
+                  %span.icon.is-small
+                    = fa_icon "heart-o"
