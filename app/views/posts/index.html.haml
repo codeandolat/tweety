@@ -15,8 +15,8 @@
                 %strong
                   = link_to post.name, post_path(post)
                 %small.has-text-weight-semibold
-                  - if post.user.username.nil?
-                    = post.user.email
+                  - if post.user.username.empty?
+                    @#{post.user.email.sub(/@.*/, '')}
                   - else
                     @#{post.user.username}
                 %small.is-italic.is-pulled-right= distance_of_time_in_words(post.created_at, Time.now, include_seconds: true)
