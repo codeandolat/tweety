@@ -22,6 +22,22 @@
 }
 
 @for $i from 1 through 5{
+  .pb#{$i*10} { padding-bottom: $i*10px; }
+}
+
+@for $i from 1 through 5{
+  .pt#{$i*10} { padding-top: $i*10px; }
+}
+
+@for $i from 1 through 5{
+  .pl#{$i*10} { padding-left: $i*10px; }
+}
+
+@for $i from 1 through 5{
+  .pr#{$i*10} { padding-left: $i*10px; }
+}
+
+@for $i from 1 through 5{
   .pv#{$i*10} {
     padding-top: $i*10px;
     padding-bottom: $i*10px;
