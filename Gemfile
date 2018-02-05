@@ -37,6 +37,7 @@ gem 'mysql2'
 gem 'rails-assets-bulma', source: 'https://rails-assets.org'
 gem 'omniauth-facebook'
 gem 'font-awesome-rails'
+gem 'friendly_id', '~> 5.1.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
