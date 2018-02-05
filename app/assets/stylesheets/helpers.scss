@@ -11,7 +11,7 @@
 }
 
 @for $i from 1 through 5{
-  .mr#{$i*10} { margin-left: $i*10px; }
+  .mr#{$i*10} { margin-right: $i*10px; }
 }
 
 @for $i from 1 through 5{
@@ -34,7 +34,7 @@
 }
 
 @for $i from 1 through 5{
-  .pr#{$i*10} { padding-left: $i*10px; }
+  .pr#{$i*10} { padding-right: $i*10px; }
 }
 
 @for $i from 1 through 5{
