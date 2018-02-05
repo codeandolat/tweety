@@ -23,13 +23,16 @@
                 %br
                 = post.content
             %nav.level.is-mobile
-              .level-left
+              .level-left.post-icons-container
                 %a.level-item
                   %span.icon.is-small
-                    = fa_icon "reply"
+                    = fa_icon "reply", class: "mr10"
+                    %span 12
                 %a.level-item
                   %span.icon.is-small
-                    = fa_icon "retweet"
+                    = fa_icon "retweet", class: "mr10"
+                    %span 12
                 %a.level-item
                   %span.icon.is-small
-                    = fa_icon "heart-o"
+                    = fa_icon "heart-o", class: "mr10"
+                    %span 12
