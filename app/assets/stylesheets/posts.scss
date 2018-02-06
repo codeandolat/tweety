@@ -2,6 +2,9 @@
   justify-content: flex-end;
   .level-item{
     justify-content: flex-end;
+    .counter{
+      margin-left: 3px;
+    }
   }
   .level-left{
     width: 60%;
