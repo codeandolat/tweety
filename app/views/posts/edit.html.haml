@@ -1,7 +1,9 @@
-%h1 Editing post
-
-= render 'form'
-
-= link_to 'Show', @post
-\|
-= link_to 'Back', posts_path
+.columns
+  .column.is-three-fifths.is-offset-one-fifth
+    .card
+      .card-content
+        %h3.title.is-3 Edita tu post
+        %hr
+        = render 'form'
+        .has-text-right
+          = link_to 'Regresar', :back
