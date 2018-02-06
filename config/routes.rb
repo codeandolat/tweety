@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :posts
+  resources :posts do
+    put "like", to: "posts#like"
+  end
   post "/sign_up_validation", to: "users/omniauth_callbacks#sign_up_validation"
 
   devise_for :users, controllers: {

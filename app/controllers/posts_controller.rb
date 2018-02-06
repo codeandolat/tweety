@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:edit, :update, :destroy]
+  before_action :set_current_user_post, only: [:edit, :update, :destroy]
+  before_action :set_post, only: [:show, :like]
   before_action :authenticate_user!
 
   # GET /posts
@@ -11,7 +12,6 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.friendly.find(params[:id])
   end
 
   # GET /posts/new
@@ -21,6 +21,18 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+  end
+
+  def like
+    if current_user.liked? @post
+      @post.unliked_by current_user
+    else
+      @post.liked_by current_user
+    end
+
+    respond_to do |format|
+      format.js
+    end
   end
 
   # POST /posts
@@ -65,8 +77,12 @@ class PostsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_post
+    def set_current_user_post
       @post = current_user.posts.friendly.find(params[:id])
+    end
+
+    def set_post
+      @post = Post.friendly.find(params[:post_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
