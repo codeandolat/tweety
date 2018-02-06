@@ -38,6 +38,8 @@ gem 'rails-assets-bulma', source: 'https://rails-assets.org'
 gem 'omniauth-facebook'
 gem 'font-awesome-rails'
 gem 'friendly_id', '~> 5.1.0'
+gem 'acts_as_votable', '~> 0.11.1'
+gem 'jquery-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
