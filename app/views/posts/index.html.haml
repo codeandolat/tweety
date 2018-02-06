@@ -32,7 +32,10 @@
                   %span.icon.is-small
                     = fa_icon "retweet"
                     %span 12
-                %a.level-item
+                = link_to post_like_path(post), class:"level-item", method: :put, remote: true do
                   %span.icon.is-small
-                    = fa_icon "heart-o"
-                    %span 12
+                    - if post.get_upvotes.size > 0
+                      = fa_icon "heart", id: "like-button-#{post.id}"
+                    - else
+                      = fa_icon "heart-o", id: "like-button-#{post.id}"
+                    %span(id="likes-counter-#{post.id}")= post.get_upvotes.size

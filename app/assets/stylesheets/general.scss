@@ -2,6 +2,7 @@ $facebook-blue: #3b5998;
 $facebook-blue-strong: #00287f;
 $light-blue: #e1f5fe;
 $white: #fff;
+$red: #f44336;
 
 html, body {
   background-color: $light-blue;
@@ -37,6 +38,10 @@ html.has-navbar-fixed-top {
 
 .media-content{
   overflow: hidden;
+}
+
+.red{
+  color: $red;
 }
 
 .round-image{
