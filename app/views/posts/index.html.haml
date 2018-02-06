@@ -22,17 +22,17 @@
                 %small.is-italic.is-pulled-right= distance_of_time_in_words(post.created_at, Time.now, include_seconds: true)
                 %br
                 = post.content
-            %nav.level.is-mobile
-              .level-left.post-icons-container
+            %nav.level.is-mobile.post-icons-container
+              .level-left
                 %a.level-item
                   %span.icon.is-small
-                    = fa_icon "reply", class: "mr10"
+                    = fa_icon "reply"
                     %span 12
                 %a.level-item
                   %span.icon.is-small
-                    = fa_icon "retweet", class: "mr10"
+                    = fa_icon "retweet"
                     %span 12
                 %a.level-item
                   %span.icon.is-small
-                    = fa_icon "heart-o", class: "mr10"
+                    = fa_icon "heart-o"
                     %span 12

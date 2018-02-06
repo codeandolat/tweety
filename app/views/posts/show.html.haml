@@ -1,15 +1,41 @@
-%p#notice= notice
-
-%p
-  %b User:
-  = @post.user
-%p
-  %b Name:
-  = @post.name
-%p
-  %b Content:
-  = @post.content
+.columns
+  .column.is-half.is-offset-one-quarter
+    .box
+      %article.media
+        .media-left
+          %figure.image.is-64x64
+            - if @post.user.image.nil?
+              %img(src="https://bulma.io/images/placeholders/64x64.png" alt="Image")
+            - else
+              %img(src="#{@post.user.image}" alt="Image")
+        .media-content
+          .content
+            %p
+              %strong
+                = link_to @post.name, post_path(@post)
+              %small.has-text-weight-semibold
+                - if @post.user.username.empty?
+                  @#{@post.user.email.sub(/@.*/, '')}
+                - else
+                  @#{@post.user.username}
+              %small.is-italic.is-pulled-right= distance_of_time_in_words(@post.created_at, Time.now, include_seconds: true)
+              %br
+              = @post.content
+          %nav.level.is-mobile.post-icons-container
+            .level-left
+              %a.level-item
+                %span.icon.is-small
+                  = fa_icon "reply"
+                  %span 12
+              %a.level-item
+                %span.icon.is-small
+                  = fa_icon "retweet"
+                  %span 12
+              %a.level-item
+                %span.icon.is-small
+                  = fa_icon "heart-o"
+                  %span 12
 
 = link_to 'Edit', edit_post_path(@post)
-\|
+
 = link_to 'Back', posts_path
