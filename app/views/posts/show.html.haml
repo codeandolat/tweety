@@ -23,6 +23,10 @@
               = @post.content
           %nav.level.is-mobile.post-icons-container
             .level-left
+              - if current_user.id == @post.user.id
+                = link_to edit_post_path(@post), class: "level-item" do
+                  %span.icon.is-small
+                    = fa_icon "edit"
               %a.level-item
                 %span.icon.is-small
                   = fa_icon "reply"
