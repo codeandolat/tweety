@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.eager_load(:user).order(created_at: :desc)
+    @posts = Post.eager_load(:user).order_by_last
   end
 
   # GET /posts/1
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
   end
 
   def favorites
-    @favorites = current_user.votes
+    @favorites = current_user.votes.order(created_at: :desc)
   end
 
   # POST /posts
