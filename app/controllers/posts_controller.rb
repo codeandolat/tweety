@@ -36,6 +36,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def favorites
+    @favorites = current_user.votes
+  end
+
   # POST /posts
   # POST /posts.json
   def create

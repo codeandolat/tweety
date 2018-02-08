@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     put "like", to: "posts#like"
   end
   post "/sign_up_validation", to: "users/omniauth_callbacks#sign_up_validation"
+  get "/favorites", to: "posts#favorites", as: :favorites
 
   devise_for :users, controllers: {
     :omniauth_callbacks => "users/omniauth_callbacks",
