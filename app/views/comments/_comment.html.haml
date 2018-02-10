@@ -10,15 +10,9 @@
       .content
         %p
           %strong
-            - if comment.user.name.nil?
-              Desconocido
-            - else
-              #{comment.user.name}
+            = print_name(comment.user)
           %small.has-text-weight-semibold
-            - if comment.user.username.empty?
-              @#{comment.user.email.sub(/@.*/, '')}
-            - else
-              @#{comment.user.username}
+            = print_username(comment.user)
           %small.is-italic.is-pulled-right= time_ago_in_words(comment.created_at)
           %br
           = comment.content

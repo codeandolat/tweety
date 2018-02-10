@@ -12,10 +12,7 @@
           %strong
             = link_to post.name, post_path(post)
           %small.has-text-weight-semibold
-            - if post.user.username.empty?
-              @#{post.user.email.sub(/@.*/, '')}
-            - else
-              @#{post.user.username}
+            = print_username(post.user)
           %small.is-italic.is-pulled-right= time_ago_in_words(post.created_at)
           %br
           = post.content
