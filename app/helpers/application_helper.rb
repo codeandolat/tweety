@@ -7,4 +7,20 @@ module ApplicationHelper
     when :alert then "notification is-warning"
     end
   end
+
+  def print_name(user)
+    if user.name.nil?
+      'Desconocido'
+    else
+      "#{user.name}"
+    end
+  end
+
+  def print_username(user)
+    if user.username.empty?
+      "@#{user.email.sub(/@.*/, '')}"
+    else
+      "@#{user.username}"
+    end
+  end
 end
