@@ -21,7 +21,7 @@
           = post.content
       %nav.level.is-mobile.post-icons-container
         .level-left
-          %a.level-item
+          = link_to post_path(post), class: 'level-item' do
             %span.icon.is-small
               = fa_icon "comment"
               %span.counter= post.comments.count
