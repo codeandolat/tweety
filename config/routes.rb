@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :posts do
+    resources :comments, only: [:create, :destroy]
     put "like", to: "posts#like"
   end
   post "/sign_up_validation", to: "users/omniauth_callbacks#sign_up_validation"
