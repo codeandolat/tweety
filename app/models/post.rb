@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   friendly_id :name, use: :slugged
 
   belongs_to :user
+  has_many :comments, dependent: :destroy
 
   validates :name, :content, presence: true
   validates :name, length: { minimum: 2, maximum: 20 }
