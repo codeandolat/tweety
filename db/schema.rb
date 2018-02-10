@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180208051131) do
+ActiveRecord::Schema.define(version: 20180210073757) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20180208051131) do
     t.integer "cached_weighted_subscribe_score", default: 0
     t.integer "cached_weighted_subscribe_total", default: 0
     t.float "cached_weighted_subscribe_average", limit: 24, default: 0.0
+    t.integer "comments_count", default: 0
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
