@@ -21,7 +21,7 @@
           = link_to post_path(post), class: 'level-item' do
             %span.icon.is-small
               = fa_icon "comment"
-              %span.counter= post.comments.count
+              %span.counter= post.comments_count
           %a.level-item
             %span.icon.is-small
               = fa_icon "retweet"
