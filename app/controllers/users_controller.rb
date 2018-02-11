@@ -6,4 +6,8 @@ class UsersController < ApplicationController
       @users = User.all.order(email: :asc)
     end
   end
+
+  def profile
+    @user = current_user
+  end
 end
