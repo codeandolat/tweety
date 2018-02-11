@@ -1,0 +1,21 @@
+.box
+  %article.media
+    .media-left
+      %figure.image.is-64x64
+        - if user.image.nil?
+          %img(src="https://bulma.io/images/placeholders/64x64.png" alt="Image")
+        - else
+          %img(src="#{user.image}" alt="Image")
+    .media-content
+      .content
+        %p
+          %strong
+            = print_username(user)
+          %br
+          %span= user.email
+          %span= print_name(user)
+      %nav.level.is-mobile.post-icons-container
+        .level-left
+          = link_to root_path, class: 'level-item' do
+            %span.icon.is-small
+              = fa_icon "plus"

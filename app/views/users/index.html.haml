@@ -1,0 +1,9 @@
+.columns
+  - if @users.present?
+    - @users.each do |user|
+      .column.is-4
+        = render "partials/user_card", user: user
+  - else
+    %p
+      No hay usuarios que contengan en su correo
+      %b= params[:search]
