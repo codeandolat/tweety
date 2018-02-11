@@ -3,6 +3,7 @@ $facebook-blue-strong: #00287f;
 $light-blue: #e1f5fe;
 $white: #fff;
 $red: #f44336;
+$yellow: #ffeb3b;
 
 html, body {
   background-color: $light-blue;
@@ -50,4 +51,8 @@ html.has-navbar-fixed-top {
 
 .title-header {
   font-family: 'Pacifico', cursive;
+}
+
+.yellow {
+  color: $yellow;
 }
