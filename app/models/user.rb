@@ -17,4 +17,8 @@ class User < ApplicationRecord
       user.image = auth.info.image
     end
   end
+
+  def self.search(search)
+    where("email LIKE ?", "%#{search}%")
+  end
 end
