@@ -1,3 +1,5 @@
+@import "general";
+
 .post-icons-container{
   justify-content: flex-end;
   .level-item{
@@ -8,5 +10,22 @@
   }
   .level-left{
     width: 60%;
+  }
+}
+
+.comments {
+  position: relative;
+  &:after {
+    background-color: $blue;
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50px;
+    width: 5px;
+  }
+  .box {
+    position: relative !important;
+    z-index: 1 !important;
   }
 }
