@@ -15,6 +15,13 @@
           = link_to "Publica", new_post_path
       .navbar-end
         .navbar-item
+          = form_tag(users_path, :method => "get", id: "search-form") do
+            .field.has-addons
+              .control
+                = submit_tag "Buscar", class: "button is-info"
+              .control
+                = text_field_tag :search, params[:search], class: "input", placeholder: "Busca a tus amigos"
+        .navbar-item
           = link_to favorites_path do
             = fa_icon "heart", class: "red"
         .navbar-item
@@ -23,10 +30,7 @@
               %img.round-image(src="https://bulma.io/images/placeholders/32x32.png")
             - else
               %img.round-image(src="#{current_user.image}")
-          - if current_user.username.empty?
-            = current_user.email
-          - else
-            = current_user.username
+          = print_username(current_user)
         .navbar-item
           = link_to "Perfil", edit_user_registration_path
         .navbar-item
