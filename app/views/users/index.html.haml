@@ -4,6 +4,8 @@
       .column.is-4
         = render "partials/user_card", user: user
   - else
-    %p
-      No hay usuarios que contengan en su correo
-      %b= params[:search]
+    .column.is-12.has-text-centered
+      .box
+        %h3.title.is-3
+          No hay usuarios que contengan en su correo
+        %h4.subtitle.is-3.has-text-weight-bold (#{params[:search]})
