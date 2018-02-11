@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   post "/sign_up_validation", to: "users/omniauth_callbacks#sign_up_validation"
   get "/favorites", to: "posts#favorites", as: :favorites
+  get "/profile", to: "users#profile", as: :profile
 
   devise_for :users, controllers: {
     :omniauth_callbacks => "users/omniauth_callbacks",
