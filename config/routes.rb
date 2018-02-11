@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
     put "like", to: "posts#like"
   end
+  resources :users, only: :index
+
   post "/sign_up_validation", to: "users/omniauth_callbacks#sign_up_validation"
   get "/favorites", to: "posts#favorites", as: :favorites
 
