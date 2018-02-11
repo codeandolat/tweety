@@ -32,6 +32,6 @@
               %img.round-image(src="#{current_user.image}")
           = print_username(current_user)
         .navbar-item
-          = link_to "Perfil", edit_user_registration_path
+          = link_to "Perfil", profile_path
         .navbar-item
           = link_to "Salir", destroy_user_session_path, method: :delete
