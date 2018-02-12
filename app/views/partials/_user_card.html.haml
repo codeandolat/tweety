@@ -22,10 +22,10 @@
               %span.level-item Enviada
             - elsif invitation and incoming_friend_requests?
               = link_to "Aceptar", friend_request_path(invitation), method: :put, class: "level-item"
+            - elsif is_friend?(user)
+              = link_to "Eliminar", destroy_friend_path(user.id), method: :delete, class: "level-item", data: { confirm: "Estas seguro?" }
             - else
-              = link_to friend_requests_path(friend_id: user.id), method: :post, class: 'level-item' do
-                %span.icon.is-small
-                  = fa_icon "user-plus"
+              = link_to "Agregar a amigos", friend_requests_path(friend_id: user.id), method: :post, class: 'level-item'
           - else
             = link_to edit_user_registration_path, class: 'level-item' do
               %span.icon.is-small
