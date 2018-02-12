@@ -17,7 +17,7 @@
       %nav.level.is-mobile.post-icons-container
         .level-left
           - if current_user.id != user.id
-            = link_to root_path, class: 'level-item' do
+            = link_to friend_requests_path(friend_id: user.id), method: :post, class: 'level-item' do
               %span.icon.is-small
                 = fa_icon "user-plus"
           - else
