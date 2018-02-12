@@ -1,2 +1,9 @@
-%h1 Friends#index
-%p Find me in app/views/friends/index.html.haml
+.columns
+  - if !@friends.empty?
+    - @friends.each do |friend|
+      .column.is-half.is-offset-one-quarter
+        = render "partials/user_card", user: friend, invitation: false
+  - else
+    .column.is-12.has-text-centered
+      .box
+        %h3.title.is-3 No tienes amigos

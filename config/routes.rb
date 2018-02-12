@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'friends/index'
-
-  get 'friends/destroy'
-
   resources :posts do
     resources :comments, only: [:create, :destroy]
     put "like", to: "posts#like"
@@ -13,6 +9,7 @@ Rails.application.routes.draw do
   post "/sign_up_validation", to: "users/omniauth_callbacks#sign_up_validation"
   get "/favorites", to: "posts#favorites", as: :favorites
   get "/profile/:id", to: "users#profile", as: :profile
+  get "/profile/:id/friends", to: "friends#index", as: :friends
 
   devise_for :users, controllers: {
     :omniauth_callbacks => "users/omniauth_callbacks",
