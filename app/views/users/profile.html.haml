@@ -22,7 +22,6 @@
             %p.subtitle.is-5
               = link_to "Escribe tu nombre", edit_user_registration_path
       %footer.card-footer
-        %a(href="#" class="card-footer-item") Posts (1)
         = link_to "Amigos (#{@user.friends.count})", friends_path, class: "card-footer-item"
         - if @user.id == current_user.id
           = link_to "Invitaciones", friend_requests_path, class: "card-footer-item"
