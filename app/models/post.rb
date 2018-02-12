@@ -14,4 +14,10 @@ class Post < ApplicationRecord
   default_scope { order(created_at: :desc) }
 
   scope :order_by_last, -> { order(created_at: :desc) }
+
+  def self.all_by_user_and_friends(user)
+    where(user_id: user.id)
+    .or( Post.where(user_id: user.friend_ids))
+  end
+
 end
