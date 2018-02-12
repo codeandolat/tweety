@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.eager_load(:user, :comments).order_by_last
+    @posts = Post.eager_load(:user, :comments).all_by_user_and_friends(current_user)
   end
 
   # GET /posts/1
