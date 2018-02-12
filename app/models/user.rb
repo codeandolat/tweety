@@ -26,7 +26,7 @@ class User < ApplicationRecord
     where("email LIKE ?", "%#{search}%").or(where("name LIKE ?", "%#{search}%"))
   end
 
-  def remove_friend(friend)
-    current_user.friends.destroy(friend)
+  def remove_friend(user, friend)
+    user.friends.destroy(friend)
   end
 end
