@@ -8,6 +8,10 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :friend_requests, dependent: :destroy
+  has_many :pending_friends, through: :friend_requests, source: :friend
+  has_many :friendships, dependent: :destroy
+  has_many :friends, through: :friendships
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -19,6 +23,10 @@ class User < ApplicationRecord
   end
 
   def self.search(search)
-    where("email LIKE ?", "%#{search}%")
+    where("email LIKE ?", "%#{search}%").or(where("name LIKE ?", "%#{search}%"))
+  end
+
+  def remove_friend(friend)
+    current_user.friends.destroy(friend)
   end
 end
