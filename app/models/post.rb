@@ -11,5 +11,7 @@ class Post < ApplicationRecord
   validates :name, length: { minimum: 2, maximum: 20 }
   validates :content, length: { minimum: 2, maximum: 120 }
 
+  default_scope { order(created_at: :desc) }
+
   scope :order_by_last, -> { order(created_at: :desc) }
 end
