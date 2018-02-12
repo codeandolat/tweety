@@ -11,7 +11,7 @@ class FriendRequestsController < ApplicationController
     @friend_request = current_user.friend_requests.new(friend: friend)
 
     if @friend_request.save
-      redirect_to profile_path(friend.id), notice: 'Petición de amistad enviada.'
+      redirect_to friend_requests_path, notice: 'Petición de amistad enviada.'
     else
       redirect_to root_path, notice: 'Ocurrió un error, por favor intente de nuevo.'
     end

@@ -17,9 +17,12 @@
       %nav.level.is-mobile.post-icons-container
         .level-left
           - if current_user.id != user.id
-            = link_to friend_requests_path(friend_id: user.id), method: :post, class: 'level-item' do
-              %span.icon.is-small
-                = fa_icon "user-plus"
+            - if !current_user.friend_requests.nil? and current_user.friend_requests.any? {|friend_request| user.id == friend_request.friend_id}
+              %span.level-item Enviada
+            - else
+              = link_to friend_requests_path(friend_id: user.id), method: :post, class: 'level-item' do
+                %span.icon.is-small
+                  = fa_icon "user-plus"
           - else
             = link_to edit_user_registration_path, class: 'level-item' do
               %span.icon.is-small

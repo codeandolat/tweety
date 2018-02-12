@@ -23,11 +23,10 @@
               = link_to "Escribe tu nombre", edit_user_registration_path
       %footer.card-footer
         %a(href="#" class="card-footer-item") Posts (1)
-        %a(href="#" class="card-footer-item") Followers (1)
-        %a(href="#" class="card-footer-item") Pendientes (1)
+        %a(href="#" class="card-footer-item") Followers
         - if @user.id == current_user.id
-          = link_to edit_user_registration_path, class: "card-footer-item" do
-            = fa_icon "cogs"
+          = link_to "Invitaciones", friend_requests_path, class: "card-footer-item"
+          = link_to "Configuración", edit_user_registration_path, class: "card-footer-item"
 .columns
   .column.is-half.is-offset-one-quarter
     - @user.posts.each do |post|

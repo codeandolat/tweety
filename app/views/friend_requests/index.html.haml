@@ -1,0 +1,13 @@
+- if !@outgoing.empty?
+  %h3.title.is-3 Invitaciones enviadas
+  .columns
+    - if @outgoing.present?
+      - @outgoing.each do |sent|
+        .column.is-4
+          = render "partials/user_card", user: sent.friend
+- else
+  .columns
+    .column.is-12.has-text-centered
+      .box
+        %h3.title.is-3
+          No hay invitaciones enviadas
