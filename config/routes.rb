@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "/favorites", to: "posts#favorites", as: :favorites
   get "/profile/:id", to: "users#profile", as: :profile
   get "/profile/:id/friends", to: "friends#index", as: :friends
+  delete "/friends/:id", to: "friends#destroy", as: :destroy_friend
 
   devise_for :users, controllers: {
     :omniauth_callbacks => "users/omniauth_callbacks",
