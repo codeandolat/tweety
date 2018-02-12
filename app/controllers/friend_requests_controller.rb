@@ -19,7 +19,7 @@ class FriendRequestsController < ApplicationController
 
   def update
     @friend_request.accept
-    head :no_content
+    redirect_to profile_path(@friend_request.user_id), notice: 'Petición de amistad aceptada.'
   end
 
   def destroy

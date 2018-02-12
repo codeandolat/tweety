@@ -2,7 +2,7 @@
   - if @users.present?
     - @users.each do |user|
       .column.is-4
-        = render "partials/user_card", user: user
+        = render "partials/user_card", user: user, invitation: false
   - else
     .column.is-12.has-text-centered
       .box

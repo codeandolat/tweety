@@ -6,8 +6,18 @@
         .column.is-4
           = render "partials/user_card", user: sent.friend
 - else
+  %h3.title.is-3 Invitaciones enviadas
+  %p.subtitle.is-5 No hay invitaciones enviadas
+
+%hr
+
+- if !@incoming.empty?
+  %h3.title.is-3 Invitaciones recibidas
   .columns
-    .column.is-12.has-text-centered
-      .box
-        %h3.title.is-3
-          No hay invitaciones enviadas
+    - if @incoming.present?
+      - @incoming.each do |received|
+        .column.is-4
+          = render "partials/user_card", user: received.user, invitation: received
+- else
+  %h3.title.is-3 Invitaciones recibidas
+  %p.subtitle.is-5 No hay invitaciones recibidas

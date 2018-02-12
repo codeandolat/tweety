@@ -18,8 +18,10 @@
       %nav.level.is-mobile.post-icons-container
         .level-left
           - if current_user.id != user.id
-            - if !current_user.friend_requests.nil? and current_user.friend_requests.any? {|friend_request| user.id == friend_request.friend_id}
+            - if outgoing_friend_requests?(user)
               %span.level-item Enviada
+            - elsif invitation and incoming_friend_requests?
+              = link_to "Aceptar", friend_request_path(invitation), method: :put, class: "level-item"
             - else
               = link_to friend_requests_path(friend_id: user.id), method: :post, class: 'level-item' do
                 %span.icon.is-small
