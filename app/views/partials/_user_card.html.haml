@@ -10,7 +10,8 @@
       .content
         %p
           %strong
-            = print_username(user)
+            = link_to profile_path(user.id) do
+              = print_username(user)
           %br
           %span= user.email
           %span= print_name(user)
