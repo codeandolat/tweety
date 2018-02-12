@@ -8,13 +8,13 @@
           %img(src="#{user.image}" alt="Image")
     .media-content
       .content
-        %p
+        %p.title.is-5
           %strong
             = link_to profile_path(user.id) do
               = print_username(user)
-          %br
-          %span= user.email
-          %span= print_name(user)
+        %span= user.email
+        %br
+        %span= print_name(user)
       %nav.level.is-mobile.post-icons-container
         .level-left
           - if current_user.id != user.id
