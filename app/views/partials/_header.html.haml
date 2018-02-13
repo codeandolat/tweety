@@ -32,6 +32,6 @@
               %img.round-image(src="#{current_user.image}")
           = print_username(current_user)
         .navbar-item
-          = link_to "Perfil", profile_path(current_user.id), class: 'friend-requests-count', data: { badge: "#{friend_request_count}" }
+          = link_to "Perfil", profile_path(current_user.id), class: "#{'friend-requests-count' if friend_request_count > 0}", data: { badge: "#{friend_request_count}" }
         .navbar-item
           = link_to "Salir", destroy_user_session_path, method: :delete
