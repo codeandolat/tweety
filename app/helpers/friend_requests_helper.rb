@@ -14,4 +14,8 @@ module FriendRequestsHelper
       return false
     end
   end
+
+  def friend_request_count
+    FriendRequest.where(friend: current_user).count
+  end
 end
