@@ -1,7 +1,7 @@
-.columns
+.columns.is-multiline
   - if @users.present?
     - @users.each do |user|
-      .column.is-4
+      .column.is-one-third
         = render "partials/user_card", user: user, invitation: false
   - else
     .column.is-12.has-text-centered
