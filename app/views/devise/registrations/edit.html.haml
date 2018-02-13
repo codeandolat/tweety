@@ -42,6 +42,15 @@
             .control
               = f.password_field :password_confirmation, autocomplete: "off", class: "input"
 
+          .file.has-name
+            %label.file-label
+              = f.file_field :image, class: 'file-input'
+              %span.file-cta
+                %span.file-icon
+                  = fa_icon "upload"
+                %span.file-label Elige tu foto…
+              %span.file-name Screen Shot 2017-07-29 at 15.54.25.png
+
           .actions.has-text-right
             = f.submit "Actualizar", class: "button is-primary"
 
