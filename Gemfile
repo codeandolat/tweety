@@ -40,6 +40,9 @@ gem 'font-awesome-rails'
 gem 'friendly_id', '~> 5.1.0'
 gem 'acts_as_votable', '~> 0.11.1'
 gem 'jquery-rails'
+gem 'carrierwave', '~> 1.0'
+gem 'carrierwave-imageoptimizer'
+gem "mini_magick"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
