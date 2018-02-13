@@ -14,3 +14,9 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+$(document).on("ready", function() {
+  $('#avatar-input').on('change', function () {
+    var file = $(this).prop('files')[0];
+    $("#avatar-file-name").text(file.name);
+  });
+})
