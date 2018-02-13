@@ -1,7 +1,7 @@
 .column.is-12.has-text-centered
   %h3.title.is-3 Amigos
   %hr
-.columns
+.columns.is-multiline
   - if !@friends.empty?
     - @friends.each do |friend|
       .column.is-half.is-offset-one-quarter
