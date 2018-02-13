@@ -3,11 +3,11 @@
     .card.profile
       .card-content
         %figure.image.is-128x128
-          - if @user.image.nil?
+          - if @user.image.url.nil?
             %img.round-image(src="https://bulma.io/images/placeholders/32x32.png")
           - else
-            %img.round-image(src="#{@user.image}")
-        .has-text-centered
+            %img.round-image(src="#{@user.image.big.url}")
+        .has-text-centered.mt20
           %p.title.is-3= @user.email
 
           - if !@user.username.empty?

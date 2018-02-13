@@ -26,10 +26,10 @@
             = fa_icon "heart", class: "red"
         .navbar-item
           %figure.image.is-32x32.mr10
-            - if current_user.image.nil?
+            - if current_user.image.url.nil?
               %img.round-image(src="https://bulma.io/images/placeholders/32x32.png")
             - else
-              %img.round-image(src="#{current_user.image}")
+              %img.round-image(src="#{current_user.image.small.url}")
           = print_username(current_user)
         .navbar-item
           = link_to "Perfil", profile_path(current_user.id), class: "#{'friend-requests-count' if friend_request_count > 0}", data: { badge: "#{friend_request_count}" }
