@@ -24,7 +24,7 @@
       %footer.card-footer
         = link_to "Amigos (#{@user.friends.count})", friends_path, class: "card-footer-item"
         - if @user.id == current_user.id
-          = link_to "Invitaciones", friend_requests_path, class: "card-footer-item"
+          = link_to "Invitaciones (#{friend_request_count})", friend_requests_path, class: "card-footer-item"
           = link_to "Configuración", edit_user_registration_path, class: "card-footer-item"
 .columns
   .column.is-half.is-offset-one-quarter
