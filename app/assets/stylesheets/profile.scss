@@ -5,9 +5,11 @@
     margin: 0 auto 20px auto;
   }
 }
+
 .friend-requests-count {
    position:relative;
 }
+
 .friend-requests-count[data-badge]:after {
    content: attr(data-badge);
    position: absolute;

@@ -1,4 +1,6 @@
 module ApplicationHelper
+
+  # helper for all kind of flash messages
   def flash_class(level)
     case level.to_sym
     when :notice then "notification is-info"
@@ -9,18 +11,12 @@ module ApplicationHelper
   end
 
   def print_name(user)
-    if user.name.nil?
-      'Desconocido'
-    else
-      "#{user.name}"
-    end
+    return 'Desconocido' if user.name.nil?
+    "#{user.name}"
   end
 
   def print_username(user)
-    if user.username.empty?
-      "@#{user.email.sub(/@.*/, '')}"
-    else
-      "@#{user.username}"
-    end
+    return "@#{user.email.sub(/@.*/, '')}" if user.username.empty?
+    "@#{user.username}"
   end
 end
