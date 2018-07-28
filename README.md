@@ -43,6 +43,26 @@ facebook_secret: ""
 * [Act as votable](https://github.com/ryanto/acts_as_votable) - Votable ActiveRecord
 * [Omniauth facebook](https://github.com/mkdynamic/omniauth-facebook) - Facebook OAuth2 Strategy for OmniAuth
 
+## Screenshots
+
+### Home/Login
+![Login](https://user-images.githubusercontent.com/5151682/43353467-7d62e960-91ff-11e8-8c4d-04c9b907762f.png)
+
+### Forgot your password?
+![Forgot](https://user-images.githubusercontent.com/5151682/43353475-97ad4afe-91ff-11e8-9e13-4687ae35fa83.png)
+
+### Dashboard
+![Dashboard](https://user-images.githubusercontent.com/5151682/43353480-b576bee4-91ff-11e8-850f-fb3802609256.png)
+
+### Profile
+![Profile](https://user-images.githubusercontent.com/5151682/43353486-d8a7539c-91ff-11e8-8dce-10a76499e02a.png)
+
+### Configuration
+![Configuration](https://user-images.githubusercontent.com/5151682/43353499-fc79f568-91ff-11e8-8ede-253c00908c3f.png)
+
+### New post
+![New Post](https://user-images.githubusercontent.com/5151682/43353522-5e51f06a-9200-11e8-9530-a72b0b4d5929.png)
+
 ## Authors
 
 * **David Sanchez** - *Github* - [Sanchezdav](https://github.com/Sanchezdav)
